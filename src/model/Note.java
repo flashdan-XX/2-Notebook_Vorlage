@@ -9,6 +9,9 @@ public abstract class Note {
 
     public Note(String title, String content) {
         //TODO: Implementiere den Konstruktor
+        this.title = title;
+        this.content = content;
+        this.creationDate = new Date();
     }
 
     public abstract String display();

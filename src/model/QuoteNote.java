@@ -5,7 +5,10 @@ public class QuoteNote extends Note {
 
     public QuoteNote(String title, String quoteText, String source) {
         //TODO: Implementiere den Konstruktor
-        super("","");
+        super(title,quoteText);
+        this.source = source;
+
+
     }
 
     /**
@@ -16,7 +19,7 @@ public class QuoteNote extends Note {
     @Override
     public String display() {
         //TODO: Implementiere die Methode display() entsprechend der Dokumentation / des Kommentars oben.
-        return "";
+        return title + ":" + getQuoteText() + source + getCreationDate();
     }
 
 

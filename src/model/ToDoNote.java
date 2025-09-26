@@ -2,10 +2,15 @@ package model;
 
 public class ToDoNote extends Note {
     private boolean completed;
+    private String obCompleted;
 
     public ToDoNote(String title, String content) {
         //TODO: Implementiere den Konstruktor
-        super("","");
+        super(title,content);
+        this.title = title;
+        this.content = content;
+        this.completed = true;
+        this.obCompleted = "";
     }
 
     /**
@@ -15,8 +20,14 @@ public class ToDoNote extends Note {
      */
     @Override
     public String display() {
+
         //TODO: Implementiere die Methode display() entsprechend der Dokumentation / des Kommentars oben.
-        return "";
+        if (completed) {
+            obCompleted = "Ja";
+        }else{
+            obCompleted = "Nein";
+        }
+        return title + ":" + content + "  Erstellt am:" + getCreationDate() + " Fertiggestellt:" + obCompleted;
     }
 
     /**

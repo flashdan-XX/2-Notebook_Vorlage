@@ -7,6 +7,8 @@ public class User {
 
     public User(String username){
         //TODO: Implementiere den Konstruktor.
+        this.username = username;
+        this.noteCount=0;
     }
 
     /**
