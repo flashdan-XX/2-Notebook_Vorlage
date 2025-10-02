@@ -9,6 +9,8 @@ public class UserController {
 
     public UserController() {
         //TODO: Implementiere den Konstruktor
+        users = new User[10];
+        userCount = 0;
     }
 
     /**
@@ -22,6 +24,13 @@ public class UserController {
      */
     public boolean createUser(String username) {
         //TODO: Implementiere die Methode
+        for (int i = 0; i < users.length; i++) {
+            if(users[i]==null){
+                users[i]=new User(username);
+                userCount++;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -32,6 +41,11 @@ public class UserController {
      */
     public User getUserByUsername(String username) {
         //TODO: Implementiere die Methode
+        for (int i = 0; i < userCount; i++) {
+            if(users[i].getUsername().equals(username)){
+                return users[i];
+            }
+        }
         return null;
     }
 
@@ -42,6 +56,11 @@ public class UserController {
      */
     public void addNoteToUser(String username, Note note){
         //TODO: Implementiere die Methode.
+        for (int i = 0; i < userCount; i++) {
+            if(users[i].getUsername().equals(username)){
+                users[i].addNote(note);
+            }
+        }
     }
 
     /**

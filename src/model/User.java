@@ -9,6 +9,7 @@ public class User {
         //TODO: Implementiere den Konstruktor.
         this.username = username;
         this.noteCount=0;
+        notes = new Note[10];
     }
 
     /**
@@ -18,6 +19,13 @@ public class User {
      */
     public boolean addNote(Note note) {
         //TODO: Implementiere die Methode
+        for(int i=0;i<notes.length;i++){
+            if(notes[i]==null){
+                notes[i]=note;
+                noteCount++;
+                return true;
+            }
+        }
         return false;
     }
 
@@ -29,6 +37,12 @@ public class User {
      */
     public boolean removeNote(int index) {
         //TODO: Implementiere die Methode
+        notes[index]=null;
+        for(int i = index; i<noteCount; i++){
+            notes[i] = notes[i+1];
+            noteCount--;
+            return true;
+        }
         return false;
     }
 
